@@ -57,7 +57,7 @@ public class OrderController {
     }
 
     @PostMapping("findByPage")
-    public Result findByPage(@RequestBody PageParam pageParam ) {
+    public Result findByPage(@RequestBody PageParam pageParam,String startTime,String endTime) {
         QueryWrapper<Order> queryWrapper = new QueryWrapper<>();
         if (StringUtils.isNotBlank(pageParam.getSearch())){
             queryWrapper.like("search",pageParam.getSearch());
